@@ -1,0 +1,261 @@
+li {
+  list-style-type: none;
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 3; /* Below the cart, above the navbar */
+  display: none; /* Hidden by default */
+  transition: opacity 300ms ease;
+}
+
+#backdrop.open {
+  display: block; /* Visible when cart is open */
+  opacity: 1;
+}
+
+#cd-cart * {
+  min-width: fit-content;
+}
+
+#cd-cart {
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  gap: 2rem;
+
+  height: 100%;
+  width: 0;
+
+  padding: 3rem 0;
+
+  background: var(--main-bg);
+
+  z-index: 4;
+  transition: 500ms;
+}
+
+#cd-cart h2 {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+
+.flex.space-between {
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+
+.flex.gap {
+  gap: 2rem;
+  align-items: center;
+  justify-content: start;
+  padding: 0;
+}
+.flex.gap i,
+.closebtn {
+  font-size: 2.5rem;
+}
+
+.cart-top {
+  height: 80%;
+}
+
+#cd-cart .cd-cart-items {
+  scroll-snap-type: y proximity;
+
+  border-top: 0.1rem solid var(--secondary-text);
+  border-bottom: 0.2rem solid var(--secondary-text);
+  height: 95%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#cd-cart .cd-cart-items li {
+  scroll-snap-align: center;
+  min-height: 10rem;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+
+  padding: 1rem 4rem;
+  border-bottom: 0.1rem solid var(--secondary-text);
+
+  transition: all 200ms ease-out;
+}
+#cd-cart .cd-cart-items li:hover {
+  background: var(--success-bg);
+}
+
+#cd-cart .cd-cart-items li.active {
+  border-bottom: 0.1rem solid var(--white-text);
+
+  background: var(--success);
+}
+#cd-cart .cd-cart-items li.active * {
+  color: var(--white-text);
+}
+#cd-cart li * {
+  transition: all 200ms ease-out;
+}
+
+#cd-cart .inline * {
+  line-height: 1.2;
+}
+#cd-cart .cart-product-name {
+  color: var(--main-text);
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+#cd-cart .cart-flavor {
+  font-weight: 500;
+  color: var(--secondary-text);
+  font-size: 1.6rem;
+}
+#cd-cart .inline.gap {
+  align-items: center;
+  gap: 2rem;
+}
+#cd-cart .cart-size {
+  font-weight: 500;
+  color: var(--secondary-text);
+  font-size: 1.6rem;
+}
+#cd-cart .cd-price {
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 1.4rem;
+}
+
+.cd-item-remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  opacity: 0;
+
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+#cd-cart li .view-item {
+  opacity: 0;
+}
+
+#cd-cart li.active .cd-item-remove,
+#cd-cart li:hover .view-item,
+#cd-cart li:hover .cd-item-remove {
+  opacity: 1;
+}
+
+#cd-cart li:not(.active):hover .cd-item-remove:hover {
+  color: var(--error);
+}
+#cd-cart li:hover .cd-item-remove:hover {
+  font-size: 2rem;
+}
+#cd-cart .inline.qnty {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+
+  border-radius: 5px;
+}
+
+.cd-qty {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--secondary-text);
+}
+
+#cd-cart i.fa-circle-info {
+  font-size: 2rem;
+}
+
+.cd-cart-total {
+  padding: 2rem 4rem;
+}
+
+.cd-cart-total p {
+  display: flex;
+  gap: 2rem;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.cd-cart-total span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 4rem;
+}
+
+.flex button {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 1rem 0;
+  color: var(--white-text);
+  background: var(--accent);
+  border-radius: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex button.cd-remove-items {
+  background: var(--main-bg);
+  color: var(--accent);
+  border: 0.2rem solid var(--accent);
+}
+
+/* Apply a smooth slide-out effect to removed items */
+#cd-cart li:not(.active).removing {
+  transform: translateX(45rem);
+  opacity: 0; /* Fade-out for better visual effect */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#cd-cart li.active.removing {
+  transform: translateX(45rem);
+  opacity: 0; /* Fade-out for better visual effect */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Adjust remaining items' positions */
+#cd-cart li {
+  transition: transform 0.5s ease;
+}
+
+#cd-cart li.removing ~ li {
+  transition-delay: 0.5s;
+  transform: translateY(-10rem); /* Adjust to match item height */
+}

@@ -1,0 +1,174 @@
+.main-container {
+  position: relative;
+
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 70%) minmax(0, 30%);
+  gap: 7.5rem;
+  align-items: start;
+
+  padding: 7.5rem 10rem;
+}
+
+#returnbtn {
+  background: none;
+
+  position: absolute;
+  top: 2.5rem;
+  left: 10rem;
+
+  border-bottom: 0.2rem solid var(--accent);
+
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+#returnbtn i {
+  color: var(--accent);
+}
+
+.items-wrapper {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#checkoutTable {
+  width: 100%;
+  max-height: 80vh;
+  border: 0.1rem solid var(--main-text);
+
+  display: grid; /* Required for scrollable table */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+#checkoutTable tr {
+  display: grid;
+  grid-template-columns: 23% 12% 20% 20% 12% auto;
+}
+
+#checkoutTable thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+}
+
+#checkoutTable .header td {
+  padding: 1rem 0;
+
+  background: var(--accent);
+  color: var(--white-text);
+  text-align: center;
+  font-size: 2rem;
+}
+#checkoutTable tr:not(.header) {
+  background: var(--secondary-bg);
+}
+#checkoutTable td {
+  border: 0.1rem solid var(--secondary-text);
+}
+#checkoutTable td p {
+  padding: 1rem 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.checkout-details {
+  max-width: 100%;
+}
+
+.checkout-details fieldset {
+  max-width: 100%;
+
+  background: var(--secondary-bg);
+  padding: 4rem 3rem;
+  padding-top: 2rem;
+
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-details fieldset legend {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid var(--border);
+  background: var(--main-bg);
+  font-size: 2rem;
+  font-weight: 600;
+}
+.checkout-details fieldset label {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--secondary-text);
+}
+.checkout-details fieldset input,
+.checkout-details fieldset select,
+.checkout-details fieldset option {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inline {
+  gap: 3rem;
+}
+
+select {
+  border: 0.2rem solid var(--border);
+  padding: 0.5rem 1rem;
+}
+
+#payment-proof-img {
+  border: 0.1rem solid var(--border);
+  border-radius: 0.5rem;
+}
+
+#submitCheckout {
+  padding: 1rem 2rem;
+  width: fit-content;
+}
+
+#checkoutTotal p {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+#checkoutTotal p b {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+#payment-proof-img {
+  background: var(--main-bg);
+
+  width: 25rem;
+  height: 25rem;
+
+  object-fit: contain;
+  object-position: top;
+}

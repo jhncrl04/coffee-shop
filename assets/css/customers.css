@@ -1,0 +1,108 @@
+table {
+  background: var(--secondary-bg);
+}
+
+table,
+td {
+  border: 0.1rem solid var(--border);
+  border-collapse: collapse;
+}
+
+table tr {
+  display: grid;
+  grid-template-columns: 7% 16% 25% 12% 21% 7% auto;
+}
+
+tr.active td {
+  border: 0.1rem solid var(--success);
+}
+
+td {
+  cursor: pointer;
+  padding: 1.5rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+td.header {
+  padding: 1rem 0;
+  background: var(--accent);
+}
+td p {
+  max-width: 100%;
+  word-break: break-word;
+  word-wrap: wrap;
+  font-size: 1.6rem;
+}
+td.header p {
+  min-width: 100%;
+  text-align: center;
+  color: var(--white-text);
+  letter-spacing: 0.3rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+td:first-child.header p,
+td:nth-child(6).header p {
+  font-size: 1.6rem;
+}
+
+td i {
+  color: var(--white-text);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+td span {
+  color: var(--white-text);
+}
+td i.true,
+td span.not-blocked {
+  background: var(--success);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+td i.false,
+td span.blocked {
+  background: var(--error);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+td span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inline {
+  gap: 5rem;
+}
+
+.inline .customerTableBtn {
+  font-size: 1.6rem;
+  background: var(--error);
+  padding: 1rem 3rem;
+  border: 0.1rem solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--white-text);
+  letter-spacing: 0.3rem;
+  transition: all 300ms ease-out;
+}
+
+.inline .error {
+  background: var(--error);
+}
+.inline .success {
+  background: var(--success);
+}
+
+.inline button:disabled {
+  background: #c9cacb;
+  border: 0.1rem solid var(--main-text);
+  color: var(--main-text);
+}

@@ -1,0 +1,369 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+
+  padding-bottom: 7.5rem;
+  background: no-repeat bottom url("/assets/images/blob-scatter-haikei.svg");
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+
+  padding: 10rem 45rem;
+  padding-bottom: 0;
+
+  background: var(--accent);
+}
+
+.header * {
+  color: var(--white-text);
+}
+
+.header h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.8rem;
+}
+
+.my-account-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.my-account-nav a {
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--secondary-text);
+  background: rgba(255, 255, 255, 0.6);
+
+  border-radius: 1rem 1rem 0 0;
+}
+
+.my-account-nav a.active {
+  background: #fff;
+}
+
+.form-container {
+  padding: 0 45rem;
+  display: flex;
+  gap: 10rem;
+
+  padding-bottom: 3rem;
+}
+
+.form-container .profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 2rem;
+
+  padding: 4rem 3rem;
+
+  background: rgba(44, 44, 44, 0.07);
+  backdrop-filter: blur(5px);
+
+  height: fit-content;
+  border: 0.1rem solid var(--secondary-text);
+  border-radius: 1rem;
+}
+
+.profile-container img {
+  width: 20rem;
+  height: 20rem;
+
+  object-fit: cover;
+
+  border: 1rem solid var(--accent);
+  border-radius: 100%;
+}
+
+.profile-container .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  width: 25rem;
+}
+
+.wrapper span {
+  width: 100%;
+}
+
+.profile-container .wrapper label {
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  background: rgba(44, 44, 44, 0.15);
+
+  border: 0.1rem solid var(--secondary-text);
+  border-radius: 0.5rem;
+}
+
+.profile-container .wrapper p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+
+.view-container form > .inline {
+  align-items: center;
+  gap: 3rem;
+}
+.view-container form .inline h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+form > .inline button {
+  background: none;
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+}
+form > .inline button i,
+form > .inline button p {
+  color: rgba(44, 44, 44, 0.8);
+  font-size: 1.4rem;
+  font-weight: 600;
+  height: fit-content;
+}
+
+form > .inline button i {
+  font-size: 1.8rem;
+}
+
+form .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-wrapper .inline {
+  gap: 5rem;
+}
+
+.input-wrapper .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-wrapper .wrapper label {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.input-wrapper .wrapper input {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.2rem 0;
+  border: none;
+  border-radius: 0;
+  border-bottom: 0.2rem solid var(--border);
+  outline: none;
+
+  background: none;
+
+  transition: all 300ms ease;
+}
+
+.view-container form .wrapper input.invalid {
+  border-color: var(--error);
+}
+
+.view-container form .wrapper input:read-only {
+  color: var(--secondary-text);
+  cursor: pointer;
+}
+
+.input-wrapper .wrapper input:focus {
+  border-bottom: 0.2rem solid var(--accent);
+}
+
+.wrapper p {
+  margin-bottom: 1.5rem;
+  color: var(--success);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+form .wrapper.edit-confirm-password {
+  margin-bottom: 0;
+}
+form .wrapper.edit-confirm-password p {
+  margin-bottom: 0;
+}
+
+.edit-confirm-password {
+  display: block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.edit-confirm-password.active {
+  opacity: 1;
+  max-height: fit-content;
+  margin-bottom: 1.5rem !important;
+}
+form .edit-wrapper {
+  display: block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+form .edit-wrapper.active {
+  opacity: 1;
+  max-height: fit-content;
+  margin-bottom: 1.5rem !important;
+}
+.main-btn {
+  width: fit-content;
+  padding: 0.5rem 2rem;
+
+  display: block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.main-btn.active {
+  opacity: 1;
+  max-height: fit-content;
+  margin-bottom: 3rem !important;
+}
+
+dialog .main-btn {
+  opacity: 1;
+  max-height: fit-content;
+}
+
+.message-container {
+  display: block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 2rem;
+  background: var(--success-bg);
+  border: 0.1rem solid var(--success);
+  border-radius: 0.5rem;
+  transition: all 500ms ease;
+}
+
+.message-container.active {
+  opacity: 1;
+  max-height: fit-content;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.message-container p {
+  font-size: 1.6rem;
+  color: var(--success);
+}
+.message-container.error {
+  background: var(--error-bg);
+  border: 0.1rem solid var(--error);
+}
+.message-container p.error {
+  font-size: 1.6rem;
+  color: var(--error);
+}
+
+/* modal */
+
+#infoConfirmModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem 5rem;
+  border: 0.2rem solid var(--border);
+  border-radius: 1rem;
+  background: var(--secondary-bg);
+}
+#infoConfirmModal div h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+#infoConfirmModal div p {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+#infoConfirmModal .inline {
+  justify-content: space-between;
+}
+#infoConfirmModal .inline button {
+  font-size: 1.8rem;
+  padding: 0.5rem 0;
+  width: 50%;
+}
+
+#addAddressBtn {
+  position: absolute;
+  width: fit-content;
+  padding: 1rem;
+  min-width: 3rem;
+  height: 3rem;
+  background: var(--accent);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 1.6rem;
+  color: var(--white-text);
+
+  border-radius: 0.5rem;
+
+  margin-bottom: 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#addAddressBtn.active {
+  position: relative;
+  opacity: 1;
+  max-height: 3rem;
+}
+
+#addAddressBtn i {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--white-text);
+}
+
+#addAddressWrapper {
+  position: absolute;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#addAddressWrapper.active {
+  position: relative;
+  opacity: 1;
+  max-height: fit-content;
+}

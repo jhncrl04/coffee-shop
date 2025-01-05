@@ -1,0 +1,407 @@
+.main-container {
+  position: relative;
+  gap: 1.5rem;
+
+  padding: 3rem 6rem;
+
+  height: 100vh;
+}
+
+.main-table {
+  width: 100%;
+  max-height: 80vh;
+
+  border: 0.1rem solid var(--secondary-text);
+
+  display: grid; /* Required for scrollable table */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+table.main-table thead {
+  position: sticky;
+  top: 0;
+
+  z-index: 2;
+}
+
+table.main-table tr {
+  width: 100%;
+  display: grid;
+
+  text-align: center;
+
+  grid-template-columns: 5% 16% auto 9% 8% 9% 9% 7%;
+}
+
+table thead td {
+  align-items: center;
+}
+table td:not(.flex.vertical) {
+  display: flex;
+  justify-content: center;
+}
+
+table td {
+  padding: 1rem;
+
+  height: 100%;
+  border: 0.1rem solid var(--secondary-text);
+
+  overflow: hidden;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+}
+
+table thead tr {
+  background: var(--accent);
+}
+table thead p {
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--white-text);
+}
+
+td:has(.payment-proof-img) {
+  padding: 2rem;
+}
+
+.payment-proof-img {
+  width: 100%;
+  height: fit-content;
+
+  object-fit: contain;
+}
+
+tbody td p {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.flex {
+  display: flex;
+}
+.flexwrap {
+  flex-wrap: wrap;
+}
+.vertical {
+  flex-direction: column;
+}
+
+hr {
+  margin: 0.5rem 0;
+  height: 0.2rem;
+  width: 100%;
+  background: var(--secondary-text);
+}
+
+table td:has(table) {
+  border: none;
+  padding: 0;
+}
+
+table.inner-table {
+  height: 100%;
+}
+table.inner-table tbody {
+  display: grid;
+
+  height: 100%;
+}
+table.inner-table tr {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+table {
+  background: var(--secondary-bg);
+}
+
+td > .flex {
+  gap: 3rem;
+}
+
+td > .flex > div {
+  max-width: 90%;
+}
+
+td > .flex > div > .flex {
+  gap: 1rem;
+}
+
+.flex .size,
+.flex .add-ons-wrapper {
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--secondary-text);
+
+  margin-bottom: 1rem;
+}
+.flex .add-ons-wrapper {
+  font-weight: 600;
+}
+
+.flexwrap {
+  margin-bottom: 1rem;
+}
+.flexwrap p {
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid var(--border);
+  border-radius: 1rem;
+  background: var(--white-text);
+
+  font-size: 1.4rem;
+
+  box-shadow: 0 0 1.5rem 0 var(--shadow);
+}
+
+.center {
+  padding: 1rem;
+  /* align-items: center; */
+}
+
+.customer-details {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  justify-content: start !important;
+}
+
+td.center {
+  justify-content: center;
+}
+
+tbody td:not(.order-details):not(.img-container) {
+  padding: 3rem 1rem;
+}
+
+tr.orders.active {
+  background: var(--success-bg);
+}
+
+.gap {
+  gap: 2rem;
+}
+
+input.button {
+  width: fit-content;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+
+  border: 0.1rem solid var(--border);
+  border-radius: 0.5rem;
+
+  font-weight: 500;
+  color: var(--white-text);
+}
+
+input.button.success {
+  background: var(--success);
+}
+input.button.approve {
+  background: var(--accent);
+}
+input.button.error {
+  background: var(--error);
+}
+input.button.view {
+  background: #425b8f;
+
+  transition: all 300ms ease-out;
+}
+input.button.view:disabled {
+  background: #6e6e6e;
+}
+
+.order-status {
+  text-transform: uppercase;
+}
+
+.search-wrapper {
+  flex-shrink: 0;
+  position: relative;
+  left: 75%;
+  overflow: hidden;
+  width: 25%;
+  border: 0.2rem solid var(--main-text);
+  border-radius: 0.5rem;
+
+  margin-bottom: 1rem;
+}
+.search-wrapper input {
+  width: 100%;
+}
+.search-wrapper * {
+  border-radius: 0 !important;
+  border: none;
+}
+
+.search-wrapper button {
+  padding: 0 1rem;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--accent);
+}
+
+.search-wrapper i {
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: var(--white-text);
+}
+
+#orderInfoModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  padding: 5rem 4rem;
+  min-width: 30vw;
+  background: var(--secondary-bg);
+}
+
+.customer-info {
+  gap: 0.5rem;
+}
+.customer-info hr {
+  height: 0.2rem;
+  width: 100%;
+  background: var(--secondary-text);
+}
+.customer-info span {
+  display: grid;
+  grid-template-columns: 25% auto;
+}
+.customer-info span p {
+  font-size: 1.6rem;
+}
+
+.order-wrapper {
+  max-height: 50rem;
+  overflow-y: auto;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.order-wrapper * {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.order-info-wrapper {
+  flex-shrink: 0;
+  gap: 1rem;
+}
+.order-info-wrapper hr {
+  margin: 1rem 0;
+}
+.order-wrapper .order-info-wrapper > .inline,
+.order-wrapper .order-info-wrapper > .wrapper {
+  justify-content: start;
+  gap: 0;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 50% auto;
+}
+
+.order-wrapper .wrapper {
+  display: grid;
+  grid-template-columns: 50% auto;
+}
+.order-wrapper .inline .inline,
+.order-wrapper .wrapper .inline {
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.order-wrapper .label {
+  font-weight: 600;
+  color: var(--secondary-text);
+}
+
+#orderInfoModal > .inline {
+  align-items: center;
+  gap: 2rem;
+}
+#orderInfoModal > .inline p {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+#orderInfoModal > .inline p.label {
+  color: var(--secondary-text);
+}
+
+.close-btn {
+  margin-top: 2rem;
+  letter-spacing: 0.3rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--white-text);
+  background: var(--accent);
+  padding: 1rem 2rem;
+
+  border-radius: 0.5rem;
+}
+
+.backdrop {
+  z-index: 3;
+  position: absolute;
+  background: var(--shadow);
+  width: 100vw;
+  height: 100vh;
+
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: all 150ms ease-in;
+}
+
+.backdrop.open {
+  transform: scaleY(1);
+}
+
+#paymentModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: var(--secondary-bg);
+  z-index: 5;
+
+  padding: 5rem 4rem;
+  border-radius: 1rem;
+
+  width: 25vw;
+  height: 80vh;
+}
+
+#paymentModal .flex {
+  gap: 3rem;
+
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#paymentModal .flex * {
+  flex-shrink: 0;
+}
+
+#paymentModal img {
+  width: 100%;
+  height: 80%;
+
+  object-fit: contain;
+}
+
+#paymentModal .close-btn {
+  margin-top: 0;
+}

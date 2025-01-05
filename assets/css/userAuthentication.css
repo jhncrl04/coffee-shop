@@ -1,0 +1,204 @@
+#formContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: hidden;
+
+  width: 50rem;
+  height: fit-content;
+
+  border-radius: 1.5rem;
+}
+
+:modal {
+  opacity: 0;
+}
+:modal[open] {
+  animation: fadeIn 300ms ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#formContainer #cardContainer {
+  position: relative;
+  width: 100rem;
+  height: 70rem;
+  max-height: fit-content;
+
+  display: flex;
+  transition: 500ms ease-in;
+}
+#formContainer #closeLoginModal {
+  position: absolute;
+  z-index: 2;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background: none;
+  outline: none;
+  border: 0.1rem solid var(--secondary-text);
+
+  top: 1.5rem;
+  right: 1.5rem;
+}
+#formContainer #closeLoginModal i {
+  color: var(--main-text);
+}
+#formContainer #cardContainer .card {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#formContainer form .formHeader {
+  margin-bottom: 3rem;
+  font-weight: 600;
+  font-size: 3.2rem;
+  letter-spacing: 1rem;
+}
+
+.card .inputContainer {
+  border-radius: 1.5rem;
+  z-index: 1;
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.5rem;
+
+  background: var(--card-bg);
+
+  padding: 4rem 5rem;
+}
+
+#loginInputContainer .error-message {
+  transition: all 0.3s ease-in;
+  display: none;
+  border: 0.2rem solid var(--error);
+  border-radius: 0.5rem;
+  background: var(--error-bg);
+  width: fit-content;
+  text-align: center;
+  padding: 1rem 5rem;
+}
+#loginInputContainer .error-message h1 {
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+#loginInputContainer .error-message p {
+  font-size: 1.4rem;
+}
+
+.card #loginInputContainer:nth-last-child(span) {
+  background: #000;
+}
+
+.card .inputContainer > * {
+  flex-shrink: 0;
+}
+
+.card .inputContainer input:not([type="checkbox"]),
+.card .inputContainer button {
+  width: 100%;
+  height: 5rem;
+  border-radius: 0.5rem;
+}
+.card .inputContainer #logInBtn,
+.card .inputContainer #signUpBtn {
+  background: var(--accent);
+  color: var(--white-text);
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  min-width: 15rem;
+}
+.card .inputContainer .line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.card .inputContainer .line hr {
+  margin: 1.5rem 0;
+  height: 0.2rem;
+  width: 80%;
+  background: var(--border);
+}
+.card .inputContainer .line p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  color: var(--secondary-text);
+  background: var(--card-bg);
+}
+.card .inputContainer .secondary-btn {
+  background: var(--main-bg);
+  color: var(--accent);
+  border: 0.2rem solid var(--accent);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  min-width: 50%;
+  width: fit-content;
+  height: 5rem;
+
+  padding: 0 2rem;
+}
+
+.inputContainer .inline {
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+.card #loginInputContainer .inline {
+  margin-bottom: 1rem;
+}
+
+.card #loginInputContainer .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inputContainer .inline button,
+.inputContainer .inline label {
+  width: fit-content;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  color: var(--secondary-text);
+  background: none;
+}
+
+.inputContainer .inline button {
+  height: fit-content;
+}

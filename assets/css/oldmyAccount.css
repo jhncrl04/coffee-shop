@@ -1,0 +1,486 @@
+.page-container {
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: left;
+  width: 45%;
+  height: fit-content;
+  padding: 5rem;
+}
+
+.container h1 {
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+  font-weight: 500;
+}
+
+.profile-container {
+  padding: 3rem;
+  background: var(--secondary-bg);
+  border: 0.1rem solid var(--main-text);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 7.5rem;
+}
+
+.profile-container img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 100%;
+  border: 1rem solid var(--accent);
+  object-fit: cover;
+}
+
+.profile-container .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.profile-container .wrapper span input[type="file"] {
+  display: none;
+}
+.profile-container .wrapper span label {
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  background: var(--accent);
+  color: var(--main-bg);
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--border);
+}
+
+.profile-container .wrapper p {
+  font-size: 1.6rem;
+  color: var(--main-text);
+  font-weight: 500;
+}
+
+.view-container {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 0.2rem solid var(--border);
+  border-radius: 0.5rem;
+}
+.view-container .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 4rem;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.5s ease-out;
+}
+.view-container form {
+  border-bottom: 0.2rem solid var(--border);
+}
+.view-container .input-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 4rem;
+  background-color: var(--main-bg);
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  flex-shrink: 0;
+}
+.view-container .inline {
+  gap: 5rem;
+}
+.view-container form .inline.input {
+  height: fit-content;
+  justify-content: space-between;
+  gap: 5rem;
+}
+.view-container form .wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 2rem;
+}
+
+.message-container {
+  display: block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 2rem;
+  background: var(--success-bg);
+  border: 0.1rem solid var(--success);
+  border-radius: 0.5rem;
+  transition: all 500ms ease;
+}
+
+.message-container.active {
+  opacity: 1;
+  max-height: fit-content;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.message-container p {
+  font-size: 1.6rem;
+  color: var(--success);
+}
+.message-container.error {
+  background: var(--error-bg);
+  border: 0.1rem solid var(--error);
+}
+.message-container p.error {
+  font-size: 1.6rem;
+  color: var(--error);
+}
+form .wrapper.edit-confirm-password {
+  margin-bottom: 0;
+}
+.edit-confirm-password {
+  display: block;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.edit-confirm-password.active {
+  opacity: 1;
+  max-height: fit-content;
+  margin-bottom: 2rem !important;
+}
+
+.view-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.view-container form .wrapper label {
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.view-container form .wrapper input {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  outline: none;
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  font-weight: 500;
+  color: var(--main-text);
+  border-bottom: 0.1rem solid var(--main-text);
+}
+
+.view-container form .wrapper input.invalid {
+  border-color: var(--error);
+}
+
+.view-container form .wrapper input:read-only {
+  color: var(--secondary-text);
+  cursor: pointer;
+}
+.view-container form .main-btn {
+  font-size: 1.6rem;
+  width: fit-content;
+}
+
+.view-container form .inline.button {
+  gap: 3rem;
+}
+.view-container form .accordion-save-btn {
+  opacity: 0;
+  max-height: 0;
+  width: fit-content;
+  overflow: hidden;
+  background-color: var(--main-bg);
+  transition: all 500ms ease;
+}
+
+.view-container form .accordion-save-btn.active {
+  opacity: 1;
+  max-height: fit-content;
+  padding: 1rem 2rem;
+}
+
+.wrapper p {
+  margin-bottom: 1.5rem;
+  color: var(--success);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.view-container form .edit-wrapper {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin-bottom: 0;
+  transition: all 500ms ease;
+}
+.view-container form .edit-wrapper.active {
+  opacity: 1;
+  margin-bottom: 2rem;
+  max-height: fit-content;
+}
+/* modal */
+#infoConfirmModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem 5rem;
+  border: 0.2rem solid var(--border);
+  border-radius: 1rem;
+  background: var(--secondary-bg);
+}
+#infoConfirmModal div h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+#infoConfirmModal div p {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+#infoConfirmModal .inline {
+  justify-content: space-between;
+}
+#infoConfirmModal .inline button {
+  font-size: 1.8rem;
+  padding: 0.5rem 0;
+  width: 50%;
+}
+
+.my-account-container {
+  position: relative;
+  top: 8rem;
+  min-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.my-account-container div {
+  width: 100%;
+  background: var(--secondary-bg);
+  border: 0.2rem solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  transition: all 200ms ease-in;
+}
+
+.my-account-container div:hover {
+  box-shadow: 0 0 3rem 0 var(--shadow);
+}
+
+.my-account-container div h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.my-account-container div p {
+  font-size: 1.4rem;
+  color: var(--secondary-text);
+}
+/* 
+css minified by chatgpt
+
+.page-container {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: left;
+  width: 45%;
+  padding: 5rem;
+}
+
+.container h1 {
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+  font-weight: 500;
+}
+
+.profile-container {
+  padding: 3rem;
+  background: var(--secondary-bg);
+  border: 0.1rem solid var(--main-text);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 7.5rem;
+}
+
+.profile-container img {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 100%;
+  border: 1rem solid var(--accent);
+  object-fit: cover;
+}
+
+.profile-container .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-container .wrapper span input[type="file"] {
+  display: none;
+}
+
+.profile-container .wrapper span label {
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  background: var(--accent);
+  color: var(--main-bg);
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--border);
+}
+
+.profile-container .wrapper p {
+  font-size: 1.6rem;
+  color: var(--main-text);
+  font-weight: 500;
+}
+
+.view-container {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 0.2rem solid var(--border);
+}
+
+.view-container .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.view-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 0.2rem solid var(--border);
+}
+
+.view-container .input-wrapper,
+.message-container {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 4rem;
+  transition: max-height 0.5s, padding 0.5s;
+}
+
+.message-container {
+  background: var(--success-bg);
+  border-radius: 0.5rem;
+  }
+  
+  .message-container.active {
+    opacity: 1;
+    max-height: fit-content;
+    padding: 1rem 2rem;
+    border: 0.1rem solid var(--success);
+  margin-bottom: 1rem;
+}
+
+.message-container p {
+  font-size: 1.6rem;
+  color: var(--success);
+}
+
+.message-container.error {
+  background: var(--error-bg);
+  border: 0.1rem solid var(--error);
+}
+
+.message-container p.error {
+  color: var(--error);
+}
+
+.view-container form .wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.view-container form .wrapper label {
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.view-container form .wrapper input {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  outline: none;
+  border: none;
+  padding: 0;
+  font-weight: 500;
+  color: var(--main-text);
+  border-bottom: 0.1rem solid var(--main-text);
+}
+
+.view-container form .wrapper input.invalid {
+  border-color: var(--error);
+}
+
+.view-container form .wrapper input:read-only {
+  color: var(--secondary-text);
+  cursor: pointer;
+}
+
+.view-container form #saveChangeBtn {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--main-bg);
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  transition: all 500ms ease;
+}
+
+.view-container form #saveChangeBtn.active {
+  opacity: 1;
+  max-height: fit-content;
+}
+
+hr {
+  height: 2px;
+  background: #000;
+}
+
+*/

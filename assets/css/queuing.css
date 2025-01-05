@@ -1,0 +1,90 @@
+.queue-container,
+.button-grid {
+  grid-template-columns: 1fr 1fr;
+
+  gap: 5rem;
+
+  padding: 2rem 5rem;
+}
+
+.queue-container {
+  flex-grow: 1;
+}
+
+.queue-container > div {
+  height: 100%;
+
+  background: var(--secondary-bg);
+  border: 0.1rem solid var(--secondary-text);
+  border-radius: 1rem;
+
+  box-shadow: 2rem 2rem 3rem -1rem var(--shadow);
+
+  padding: 3rem;
+}
+
+.queue-container > div h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  font-weight: bold;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.queue-container > div ul {
+  padding-top: 1rem;
+
+  height: 95%;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: auto auto auto;
+  gap: 1.5rem;
+
+  overflow: hidden;
+}
+
+.queue-container > div ul li {
+  color: var(--secondary-text);
+  font-size: 2.4rem;
+  font-weight: 500;
+
+  text-indent: 5rem;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  border-bottom: 0.1rem solid var(--border);
+  border-right: 0.1rem solid var(--border);
+
+  transition: all 300ms ease-out;
+}
+
+.queue-container > div ul li:hover {
+  background: var(--border);
+}
+.queue-container > div ul li.active {
+  background: var(--success-bg);
+}
+.queue-container > div ul li.removing {
+  transform: translateX(100%);
+}
+
+.button-grid button {
+  width: fit-content;
+
+  padding: 1rem 2rem;
+
+  color: var(--white-text);
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  background: var(--accent);
+
+  border: 0.1rem solid var(--secondary-text);
+  border-radius: 0.5rem;
+
+  box-shadow: 2rem 2rem 3rem -1rem var(--shadow);
+}
