@@ -1,6 +1,7 @@
-# Coffee Shop Online Ordering App (Unfinish Version)
+# Coffee Shop Online Ordering App
 
-This is an unfinish version of this site. I format my drive thinking i already pushed the finished codebase.
+A coffee shop online ordering application that can be run locally using
+XAMPP.
 
 To run this project locally using XAMPP, follow the steps below:
 
